@@ -1,0 +1,5 @@
+{
+  "name": "1ike/brain-games",
+  "version":"0.0.1",
+  "bin": ["bin/brain-games"]
+}

@@ -1,14 +1,19 @@
 {
   "name": "1ike/brain-games",
-  "version":"0.1.0",
-  "bin": ["bin/brain-games"],
+  "version":"0.2.0",
+  "license": "MIT",
+
+  "bin": ["bin/brain-even"],
 
   "autoload": {
-    "files": ["src/Cli.php"]
+    "psr-4": {
+      "BrainGames\\": "src"
+    }
   },
 
   "scripts": {
-    "phpcs": "phpcs"
+    "phpcs": "phpcs",
+    "phpcbf": "phpcbf"
   },
 
   "require": {

@@ -7,7 +7,7 @@
     "files": ["src/Cli.php"]
   },
   
-  "minimum-stability": "dev-master",
+  "minimum-stability": "dev",
   
   "require": {
     "wp-cli/php-cli-tools":"*"

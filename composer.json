@@ -2,12 +2,21 @@
   "name": "1ike/brain-games",
   "version":"0.1.0",
   "bin": ["bin/brain-games"],
-  
+
   "autoload": {
     "files": ["src/Cli.php"]
   },
-  
+
+  "scripts": {
+    "phpcs": "phpcs"
+  },
+
   "require": {
     "wp-cli/php-cli-tools":"*"
+  },
+
+  "require-dev": {
+    "squizlabs/php_codesniffer":"*"
   }
+
 }

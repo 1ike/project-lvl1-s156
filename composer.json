@@ -1,5 +1,13 @@
 {
   "name": "1ike/brain-games",
-  "version":"0.0.1",
-  "bin": ["bin/brain-games"]
+  "version":"0.1.0",
+  "bin": ["bin/brain-games"],
+  
+  "autoload": {
+    "files": ["src/Cli.php"]
+  },
+  
+  "require": {
+    "wp-cli/php-cli-tools":"dev-master"
+  }
 }

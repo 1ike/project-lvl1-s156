@@ -6,7 +6,7 @@ class Even extends \BrainGames\Game
 {
     public static function run()
     {
-        $rulesMessage = 'Answer "yes" if number is even otherwise answer "no".';
+        $rulesMessage = 'What is the result of the expression?';
         $limitMaxNumber = 100;
 
         $getQuestionAnswerPair = function () use ($rulesMessage, $limitMaxNumber) {

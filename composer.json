@@ -1,9 +1,9 @@
 {
   "name": "1ike/brain-games",
-  "version":"0.2.0",
+  "version":"0.3.0",
   "license": "MIT",
 
-  "bin": ["bin/brain-even"],
+  "bin": ["bin/brain-even", "bin/brain-calc"],
 
   "autoload": {
     "psr-4": {

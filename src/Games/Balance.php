@@ -5,6 +5,17 @@ namespace BrainGames\Games;
 class Balance extends \BrainGames\Game
 {
 
+    private function align($remainder, $evenDigit, $inputLength, $output)
+    {
+        if ($inputLength == count($output)) {
+            return $output;
+        }
+
+        $digit = $remainder > 0 ? $evenDigit + 1 : $evenDigit;
+
+        return self::align($remainder - 1, $evenDigit, $inputLength, array_merge(array($digit), $output));
+    }
+
     private function balance($num)
     {
         $str = (string) $num;
@@ -23,16 +34,10 @@ class Balance extends \BrainGames\Game
         $evenDigit = floor($sum / $inputLength);
         $remainder = $sum % $inputLength;
 
-        $output = [];
-        while ($remainder > 0) {
-            array_push($output, $evenDigit + 1);
-            $remainder -= 1;
-        }
-        while ($inputLength > count($output)) {
-            array_push($output, $evenDigit);
-        }
+        $output = self::align($remainder, $evenDigit, $inputLength, []);
 
-        return (int) implode(array_reverse($output));
+
+        return (int) implode($output);
     }
 
 

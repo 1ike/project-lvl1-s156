@@ -16,12 +16,17 @@ class GCD extends \BrainGames\Game
     public static function run()
     {
         $rulesMessage = 'Find the greatest common divisor of given numbers.';
+        $limitMinNumber = 1;
         $limitMaxNumber = 30;
 
-        $getQuestionAnswerPair = function () use ($rulesMessage, $limitMaxNumber) {
+        $getQuestionAnswerPair = function () use (
+            $rulesMessage,
+            $limitMinNumber,
+            $limitMaxNumber
+        ) {
 
-            $a = rand(1, $limitMaxNumber);
-            $b = rand(1, $limitMaxNumber);
+            $a = rand($limitMinNumber, $limitMaxNumber);
+            $b = rand($limitMinNumber, $limitMaxNumber);
             $question = $a.' '.$b;
 
             $result = self::getGCD($a, $b);

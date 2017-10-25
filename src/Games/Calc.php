@@ -45,18 +45,20 @@ class Calc extends \BrainGames\Game
     public static function run()
     {
         $rulesMessage = 'Answer "yes" if number is even otherwise answer "no".';
+        $limitMinNumber = 1;
         $limitMaxNumber = 30;
         $limitDiceFaces = 3;
 
         $getQuestionAnswerPair = function () use (
             $rulesMessage,
+            $limitMinNumber,
             $limitMaxNumber,
             $limitDiceFaces
         ) {
 
              // get $question
-            $a = rand(1, $limitMaxNumber);
-            $b = rand(1, $limitMaxNumber);
+            $a = rand($limitMinNumber, $limitMaxNumber);
+            $b = rand($limitMinNumber, $limitMaxNumber);
 
             $operator = self::getOperator($limitDiceFaces);
 

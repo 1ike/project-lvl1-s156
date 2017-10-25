@@ -11,7 +11,7 @@ class Even extends \BrainGames\Game
 
         $getQuestionAnswerPair = function () use ($rulesMessage, $limitMaxNumber) {
 
-            $question = rand(0, $limitMaxNumber);
+            $question = rand($limitMaxNumber);
             $correctAnswer = $question % 2 === 0 ? 'yes' : 'no';
 
             return [

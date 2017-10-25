@@ -31,7 +31,7 @@ class Game
             line('Correct!');
             $this->play($getQuestionAnswerPair, $name, $counter + 1);
         } else {
-            line("'%s' is wrong $answer ;(. Correct $answer was '%s'.", $answer, $correctAnswer);
+            line("'%s' is wrong ;(. Correct was '%s'.", $answer, $correctAnswer);
             line("Let's try again, %s!", $name);
         }
     }

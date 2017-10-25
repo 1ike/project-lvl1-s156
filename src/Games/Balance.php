@@ -20,7 +20,7 @@ class Balance extends \BrainGames\Game
             return $acc + $val;
         });
 
-        $evenDigit = round($sum / $inputLength);
+        $evenDigit = floor($sum / $inputLength);
         $remainder = $sum % $inputLength;
 
         $output = [];
@@ -39,11 +39,16 @@ class Balance extends \BrainGames\Game
     public static function run()
     {
         $rulesMessage = 'Balance the given number.';
+        $limitMinNumber = 1;
         $limitMaxNumber = 1000;
 
-        $getQuestionAnswerPair = function () use ($rulesMessage, $limitMaxNumber) {
+        $getQuestionAnswerPair = function () use (
+            $rulesMessage,
+            $limitMinNumber,
+            $limitMaxNumber
+        ) {
 
-            $num = rand(1, $limitMaxNumber);
+            $num = rand($limitMinNumber, $limitMaxNumber);
             $question = $num;
 
             $correctAnswer = (string) self::balance($num);

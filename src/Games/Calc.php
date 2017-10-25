@@ -23,6 +23,23 @@ class Calc extends \BrainGames\Game
         return $operator;
     }
 
+    private function calculate($operator, $a, $b)
+    {
+        switch ($operator) {
+            case '+':
+                $result = $a + $b;
+                break;
+            case '-':
+                $result = $a - $b;
+                break;
+            default:
+                $result = $a * $b;
+                break;
+        }
+
+        return $result;
+    }
+
 
 
     public static function run()
@@ -46,18 +63,7 @@ class Calc extends \BrainGames\Game
             $question = $a.$operator.$b;
 
             // get correct answer
-            switch ($operator) {
-                case '+':
-                    $result = $a + $b;
-                    break;
-                case '-':
-                    $result = $a - $b;
-                    break;
-                default:
-                    $result = $a * $b;
-                    break;
-            }
-
+            $result = self::calculate($operator, $a, $b);
             $correctAnswer = (string) $result;
 
             return [

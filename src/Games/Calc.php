@@ -4,6 +4,27 @@ namespace BrainGames\Games;
 
 class Calc extends \BrainGames\Game
 {
+    private function getOperator($limitDiceFaces)
+    {
+        $dice = rand(0, $limitDiceFaces);
+
+        switch ($dice) {
+            case 0:
+                $operator = '+';
+                break;
+            case 1:
+                $operator = '-';
+                break;
+            default:
+                $operator = '*';
+                break;
+        }
+
+        return $operator;
+    }
+
+
+
     public static function run()
     {
         $rulesMessage = 'Answer "yes" if number is even otherwise answer "no".';
@@ -20,24 +41,11 @@ class Calc extends \BrainGames\Game
             $a = rand(0, $limitMaxNumber);
             $b = rand(0, $limitMaxNumber);
 
-            $dice = rand(0, $limitDiceFaces);
-            $operator = '';
-            switch ($dice) {
-                case 0:
-                    $operator = '+';
-                    break;
-                case 1:
-                    $operator = '-';
-                    break;
-                default:
-                    $operator = '*';
-                    break;
-            }
+            $operator = self::getOperator($limitDiceFaces);
 
             $question = $a.$operator.$b;
 
             // get correct answer
-            $result;
             switch ($operator) {
                 case '+':
                     $result = $a + $b;

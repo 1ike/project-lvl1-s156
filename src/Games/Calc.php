@@ -55,8 +55,8 @@ class Calc extends \BrainGames\Game
         ) {
 
              // get $question
-            $a = rand(0, $limitMaxNumber);
-            $b = rand(0, $limitMaxNumber);
+            $a = rand(1, $limitMaxNumber);
+            $b = rand(1, $limitMaxNumber);
 
             $operator = self::getOperator($limitDiceFaces);
 

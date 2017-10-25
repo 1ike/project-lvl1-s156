@@ -25,7 +25,7 @@ class Game
         $correctAnswer = $questionAnswerPair['correctAnswer'];
 
         line('Question: %s', $question);
-        $questionMessage = 'Your $answer: ';
+        $questionMessage = 'Your $answer';
         $answer = \cli\prompt($questionMessage);
         if ($answer === $correctAnswer) {
             line('Correct!');
@@ -41,7 +41,6 @@ class Game
         line('Welcome to the Brain Game!');
         line($this->rulesMessage.PHP_EOL);
         $name = \cli\prompt('May I have your name?');
-        $name = $name !== '' ? $name : 'Anonymous';
         line("Hello, %s!".PHP_EOL, $name);
 
         $this->play($this->getQuestionAnswerPair, $name, 0);

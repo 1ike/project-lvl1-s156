@@ -38,7 +38,7 @@ class Balance extends \BrainGames\Game
 
     public static function run()
     {
-        $rulesMessage = 'Find the greatest common divisor of given numbers.';
+        $rulesMessage = 'Balance the given number.';
         $limitMaxNumber = 1000;
 
         $getQuestionAnswerPair = function () use ($rulesMessage, $limitMaxNumber) {

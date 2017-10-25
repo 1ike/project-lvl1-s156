@@ -45,16 +45,12 @@ class Calc extends \BrainGames\Game
     public static function run()
     {
         $rulesMessage = 'Answer "yes" if number is even otherwise answer "no".';
-        $limitMinNumber = 1;
-        $limitMaxNumber = 30;
-        $limitDiceFaces = 3;
 
-        $getQuestionAnswerPair = function () use (
-            $rulesMessage,
-            $limitMinNumber,
-            $limitMaxNumber,
-            $limitDiceFaces
-        ) {
+        $getQuestionAnswerPair = function () {
+
+            $limitMinNumber = 1;
+            $limitMaxNumber = 30;
+            $limitDiceFaces = 3;
 
              // get $question
             $a = rand($limitMinNumber, $limitMaxNumber);

@@ -44,14 +44,11 @@ class Balance extends \BrainGames\Game
     public static function run()
     {
         $rulesMessage = 'Balance the given number.';
-        $limitMinNumber = 1;
-        $limitMaxNumber = 1000;
 
-        $getQuestionAnswerPair = function () use (
-            $rulesMessage,
-            $limitMinNumber,
-            $limitMaxNumber
-        ) {
+        $getQuestionAnswerPair = function () {
+
+            $limitMinNumber = 1;
+            $limitMaxNumber = 1000;
 
             $num = rand($limitMinNumber, $limitMaxNumber);
             $question = $num;

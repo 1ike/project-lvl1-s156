@@ -7,11 +7,13 @@ class Even extends \BrainGames\Game
     public static function run()
     {
         $rulesMessage = 'What is the result of the expression?';
-        $limitMaxNumber = 100;
 
-        $getQuestionAnswerPair = function () use ($rulesMessage, $limitMaxNumber) {
+        $getQuestionAnswerPair = function () {
 
-            $question = rand($limitMaxNumber);
+            $limitMinNumber = 0;
+            $limitMaxNumber = 100;
+
+            $question = rand($limitMinNumber, $limitMaxNumber);
             $correctAnswer = $question % 2 === 0 ? 'yes' : 'no';
 
             return [

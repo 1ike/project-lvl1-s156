@@ -12,7 +12,7 @@ class Prime extends \BrainGames\Game
             return true;
         }
 
-        if ($num % $next == 0 || num <= 1) {
+        if ($num % $next == 0 || $num <= 1) {
             return false;
         }
 

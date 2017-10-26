@@ -5,9 +5,12 @@ namespace BrainGames\Games;
 class Prime extends \BrainGames\Game
 {
 
-    private function isPrime($num, $upperLimit, $next = 2) {
+    private function isPrime($num, $upperLimit, $next = 2)
+    {
 
-        if ($next > $upperLimit) return true;
+        if ($next > $upperLimit) {
+            return true;
+        }
 
         if ($num % $next == 0 || num <= 1) {
             return false;

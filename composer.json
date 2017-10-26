@@ -1,6 +1,6 @@
 {
   "name": "1ike/brain-games",
-  "version":"0.6.0",
+  "version":"0.7.0",
   "license": "MIT",
 
   "bin": [
@@ -8,7 +8,8 @@
       "bin/brain-calc",
       "bin/brain-gcd",
       "bin/brain-balance",
-      "bin/brain-progression"
+      "bin/brain-progression",
+      "bin/brain-prime"
   ],
 
   "autoload": {

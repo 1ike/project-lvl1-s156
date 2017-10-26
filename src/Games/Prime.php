@@ -8,12 +8,12 @@ class Prime extends \BrainGames\Game
     private function isPrime($num, $upperLimit, $next = 2)
     {
 
-        if ($next > $upperLimit) {
-            return true;
+        if ($num <= 1 || $num % $next == 0) {
+            return false;
         }
 
-        if ($num % $next == 0 || $num <= 1) {
-            return false;
+        if ($next > $upperLimit) {
+            return true;
         }
 
         return self::isPrime($num, $upperLimit, $next + 1);

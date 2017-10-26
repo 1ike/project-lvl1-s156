@@ -33,23 +33,24 @@ class Progression extends \BrainGames\Game
 
         $getQuestionAnswerPair = function () {
 
-            $limitMinNumber = 1;
+            $limitMinDiff = 1;
+            $limitMaxDiff = 10;
             $progressionLength = 10;
-            $limitStartPosition = 100;
-            $limitDiff = 10;
+            $limitMinStartPosition = 0;
+            $limitMaxStartPosition = 100;
             $maskSymbol = '..';
             $separator = ' ';
 
             // get question
-            $diff = rand($limitMinNumber, $limitDiff);
-            $startValue = rand($limitMinNumber, $limitStartPosition);
+            $diff = rand($limitMinDiff, $limitMaxDiff);
+            $startValue = rand($limitMinStartPosition, $limitMaxStartPosition);
             $questionResult = self::getProgression(
                 $startValue,
                 $diff,
                 $progressionLength,
                 []
             );
-            $mask = rand($limitMinNumber, $progressionLength);
+            $mask = rand(0, $progressionLength);
             $questionResult[$mask] = $maskSymbol;
 
             $question = implode($separator, $questionResult);
